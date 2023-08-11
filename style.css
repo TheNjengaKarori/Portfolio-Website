@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  font-family: 'Poppins', sans-serif;
+  background-image: url("images/Bg.png");
+  /* Set background size and other background properties as needed */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* Set the background color as a fallback in case the image is unavailable or takes time to load */
+  background-color: black;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100vh;
+}
+
+img {
+  width: 70px; 
+  height: 70px; 
+}
+
+.icon-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 50px;
+  margin-bottom: 5px;
+}
+
+.icon-label {
+  margin-top: 2px;
+  color: white;
+  font-size: 12px;
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+}
+
+
+.toast-message {
+  position: fixed;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.2); /* Use rgba for a transparent background */
+  backdrop-filter: blur(50px); /* Add a blur effect to create the glass effect */
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 200;
+  display: none;
+  transition: top 3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for depth */
+  border: 0.2px solid silver;
+}
+
+.show-toast {
+  top: 20px;
+}
+
+.close-icon {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+  color: white;
+  margin-right: 30px; /* Add a margin to create space between the toast message and close icon */
+}
+
+.toast-message i {
+  margin-right: 5px;
+}
+
+.toast-message {
+  /* Existing styles for toast message ... */
+  animation: bounce 0.6s ease-in-out;
+  
+}
+
+
+/* ... Previous CSS Rules ... */
+
+.bottom-container {
+  width: 100%;
+  background-color: #382F25;
+  height: 50px; /* Set the desired height for the bottom container */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 20px; /* Added padding to create space for the real-time clock and date */
+}
+
+.windows11-container {
+  display: flex;
+  align-items: center;
+  margin-right: auto; /* Pushes the time-and-date-container to the right */
+}
+
+.windows11-logo,
+.behance-logo {
+  width: 35px; /* Set the width of the Windows 11 logo and Behance logo */
+  height: 35px; /* Set the height of the Windows 11 logo and Behance logo */
+  margin-right: 10px; /* Add some space between the images and their labels */
+}
+
+.time-and-date-container {
+  display: flex;
+  flex-direction: column; /* Stack the elements vertically */
+  align-items: flex-end; /* Align elements to the right */
+  margin-right: 60px; 
+}
+
+.real-time,
+.real-date {
+  font-size: 12px;
+  color: #ffffff; /* Change the color of the time and date text to white (#FFFFFF) */
+  /* Additional styling for the real-time clock and date */
+}
+
+.real-time {
+  margin-bottom: 5px; /* Add margin between the time and date */
+}
+
+/* ... Previous CSS Rules ... */
+
+
+/* Keyframes for bounce animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Styles for the modal window */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
+  display: flex; /* Use flex display for centering */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+}
+
+.modal-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: white; /* Change the color of the title text */
+}
+
+.modal-line {
+  width: 100%;
+  height: 2px;
+  background-color: white; /* Set the color of the white line */
+  margin-bottom: 15px; /* Add space between the title and line */
+}
+
+
+.modal-content {
+  background-color: black;
+  border-radius: 10px;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 60%;
+  margin-bottom: 1000px;
+  overflow-y: auto;
+}
+
+.modal-image {
+  display: block;
+  margin: 0 auto; /* Center the image horizontally */
+  width: 200px; 
+  height: 200px;/* Set the desired width for the modal image */
+  max-width: 100%; /* Ensure the image fits within the modal's width */
+  margin-top: 20px; /* Add some space between the image and the title/line */
+}
+
+.modal-hint {
+  font-size: 16px;
+  color: #888; /* Set the color of the hint text */
+  margin-top: 10px;
+  text-align: center;
+}
+
+.modal-hint a {
+  color: lightblue; /* Set the color for the link text */
+  text-decoration: underline; /* Add underline to indicate it's a link */
+}
+
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #aaa;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+/* ... Other styles ... */
+
+.custom-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 90%; /* Adjust the width as needed */
+  height: 75%; /* Adjust the height as needed */
+  transform: translate(-50%, -50%);
+  background-color: black;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  border: 2px solid silver;
+  overflow: auto;
+}
+
+.custom-popup-heading {
+  text-align: left;
+}
+
+.custom-popup-line {
+  width: 100%;
+  height: 1px;
+  background-color: white;
+  margin-top: 10px; /* Add some spacing between the line and the heading */
+  margin-bottom: 10px; /* Add some spacing between the line and the content */
+}
+
+.image-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  margin-top: 10px; /* Add spacing between the white line and the image */
+  margin-bottom: 10px; /* Add spacing between the image and other content */
+}
+
+.image-container img {
+  width: 300px;
+  height: 300px;
+  object-fit: contain; /* Keep the aspect ratio and fit the image within the specified dimensions */
+}
+
+.popup-content {
+  text-align: center;
+}
+
+.custom-popup p a {
+  color: lightcoral; /* Change the color to blue */
+  text-decoration: underline; /* Add underline to indicate it's a link */
+}
+
+#closePopup:hover {
+  background-color: silver;
+}
+
+.close-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: white;
+  cursor: pointer;
+}
+
+#closeCustomPopupIcon {
+  display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
